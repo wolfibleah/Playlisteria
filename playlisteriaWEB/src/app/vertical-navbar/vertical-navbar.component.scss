@@ -1,0 +1,85 @@
+:host {
+  display: inline-block;
+  max-width: 300px;
+  min-width: 250px;
+  height: 100vh;
+  background: var(--color-background-navbars);
+  color: var(--color-white);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  .logo-container {
+    width: 100%;
+    padding: 22px;
+
+    .logo {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .horizontal-navbar {
+    width: 100%;
+
+    .nav-link-group {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 10px 25px;
+      background-color: inherit;
+      border-radius: 13px;
+
+      .fa-solid {
+        margin-right: 10px;
+      }
+
+      .nav-link {
+        color: inherit;
+        text-decoration: none;
+        padding: 0px 12px;
+        font-family: var(--font-roboto);
+      }
+    }
+
+    .nav-link-group:hover {
+      background: var(--color-background-light);
+    }
+
+    .active-link {
+      background: var(--color-background-light);
+    }
+  }
+}
+
+.playlist-container {
+  max-height: 300px;
+  border-bottom: 2px solid var(--color-white);
+  width: 100%;
+  padding-left: 10px;
+
+  .playlist {
+    padding-left: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-cyan-accent);
+    }
+  }
+}
+
+.playlist-container {
+  border-bottom: none;
+}

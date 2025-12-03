@@ -1,0 +1,19 @@
+<app-vertical-navbar></app-vertical-navbar>
+
+<main>
+    <div class="container">
+        <app-search [searchedText]="searchedText" (searchUrlChange)="getValueFromSearch($event)" [searchBy]="searchBy"></app-search>
+
+        <div class="music-list">
+            <ng-container *ngIf="platform === 'youtube'">
+                <app-music-toast *ngFor="let x of youtubeMusicList" [youtubeMetaData]=x platform="youtube"></app-music-toast>
+            </ng-container>
+
+            <ng-container *ngIf="platform === 'spotify'">
+                <app-music-toast *ngFor="let x of spotifyMusicList" [spotifyMetaData]=x platform="spotify"></app-music-toast>
+            </ng-container>
+        </div>
+  </div>
+</main>
+
+<app-vertical-menu></app-vertical-menu>

@@ -1,0 +1,27 @@
+<div class="toast">
+    <ng-container *ngIf="platform === 'youtube'">
+        <img class="song-image" [src]="youtubeMetaData?.thumbnailUrl" />
+
+        <div class="toast-description">
+            <span class="song-title">{{ youtubeMetaData?.title }}</span>
+            <span class="song-author">{{ youtubeMetaData?.channelTitle }} </span>
+        </div>
+    
+        <div class="toast-buttons">
+            <i class="fa-solid fa-circle-info" (click)="navigateToSongInfo()"></i>
+            <i class="fa-solid fa-download" (click)="downloadSong($event)"></i> 
+        </div>
+    </ng-container>
+    <ng-container *ngIf="platform === 'spotify'">
+        <img class="song-image" [src]="spotifyMetaData?.thumbnailUrl" />
+
+        <div class="toast-description">
+            <span class="song-title">{{ spotifyMetaData?.title }}</span>
+            <span class="song-author">{{ spotifyMetaData?.artist }} </span>
+        </div>
+    
+        <div class="toast-buttons">
+            <i class="fa-solid fa-circle-info" (click)="navigateToSongInfo()"></i>
+        </div>
+    </ng-container>
+</div>

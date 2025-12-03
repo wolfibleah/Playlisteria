@@ -1,0 +1,129 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color-background-dark);
+
+  font-family: var(--font-roboto);
+  font-style: normal;
+  color: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.home-nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-background-dark);
+  padding: 20px;
+}
+
+.primary-btn {
+  background: transparent;
+  font-size: 16px;
+  color: var(--color-white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s ease;
+  padding: 16px 10px;
+  border-radius: 10px;
+  font-family: "roboto", sans-serif;
+}
+
+.primary-btn:hover {
+  background: var(--color-background-light);
+}
+
+.logo-container {
+  width: 350px;
+  height: 125px;
+  margin-left: 10%;
+
+  img {
+    width: 100%;
+  }
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  flex-grow: 1;
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+
+    .home-title {
+      margin-bottom: 40px;
+    }
+
+    .home-title > h1 {
+      font-size: 46px;
+      margin: 0;
+    }
+
+    .home-title > p {
+      min-height: 40px;
+      font-size: 28px;
+      margin: 0;
+      font-weight: 300;
+    }
+
+    .home-btn {
+      width: max-content;
+      padding: 10px 25px;
+
+      font-size: 24px;
+      color: white;
+
+      background-color: transparent;
+      border: 3px solid var(--color-cyan-accent);
+      border-radius: 20px;
+
+      cursor: pointer;
+    }
+
+    .home-btn:hover {
+      background-color: var(--color-background-light);
+    }
+  }
+  img {
+    position: absolute;
+    bottom: -150px;
+    right: 0;
+    width: 1100px;
+    height: 800px;
+
+    animation: slide-in 1s;
+  }
+
+  @keyframes slide-in {
+    from {
+      right: -1000px;
+    }
+    to {
+      right: 0;
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}

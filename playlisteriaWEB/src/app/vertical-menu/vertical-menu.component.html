@@ -1,0 +1,62 @@
+<div class="container">
+    <!-- User neautentificat -->
+    <div class="menu-buttons"
+        *ngIf="!isAuthenticated">
+      <nav class="menu-nav">
+        <button class="primary-btn" routerLink="/register">Register</button>
+        <button class="primary-btn" routerLink="/login">Login</button>
+      </nav>
+    </div>
+
+  <!-- User autentificat -->
+  <div class="content" *ngIf="isAuthenticated">
+    <div class="menu-header">
+      <div class="user-info">
+        <span
+          >Hello, <span class="username">{{ userName }}</span
+          >!</span
+        >
+        <div class="dropdown">
+          <button
+            class="dropdown-toggle"
+            type="button"
+            id="userDropdown"
+            (click)="toggleDropdown()"
+          >
+            <i class="fa-regular fa-user"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown-menu" *ngIf="showDropdown">
+      <a class="dropdown-item" href="/userprofile"
+        ><i class="fa-solid fa-address-card"></i> My Profile</a
+      >
+      <a class="dropdown-item" href="/" (click)="logout()"
+        ><i class="fa-solid fa-right-from-bracket"></i> Log out</a
+      >
+    </div>
+    <div class="connect-links" *ngIf="!isConenctedToSpotify || !isConnectedToYoutube">
+      <h2>Connect with</h2>
+        <div class="link-group">
+        <a [href]="spotifyLoginLink" *ngIf="!isConenctedToSpotify">
+          <div class="link link-spotify">
+            <img
+              src="../../assets/images/spotify/e2434e90aa9f73201e11a560a1c63c74.png"
+            />
+          </div>
+        </a>
+        <a [href]="youtubeLoginLink" *ngIf="!isConnectedToYoutube">
+          <div class="link link-youtube">
+            <img class="logo" src="../../assets/images/youtube/icon.svg" />
+            <img
+              class="text"
+              src="../../assets/images/youtube/youtube-paths.svg"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

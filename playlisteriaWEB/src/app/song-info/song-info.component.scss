@@ -1,0 +1,50 @@
+:host{
+  display: flex;
+  color: var(--color-white);
+}
+
+app-vertical-navbar {
+    flex: 1;
+}
+
+app-vertical-menu {
+    flex: 1;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: var(--color-background-dark);
+}
+
+.songinfo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Adaugat pentru a centra pe ambele axe */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  gap: 50px;
+
+  .yt-video-container {
+    width: 588px;
+    height: 362px;
+    margin: 10px;
+  }
+
+  .video-container {
+    width: 607px;
+    height: 386px;
+    border-radius: 10px;
+    background: var(--color-background-light);
+  }
+
+  .song-description {
+    max-width:400px;
+    text-wrap: pretty;
+  }
+  
+}

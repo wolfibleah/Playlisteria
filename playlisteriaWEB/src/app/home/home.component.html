@@ -1,0 +1,24 @@
+<nav class="home-nav">
+  <button class="primary-btn" (click)="navigateToRegister()">Register</button>
+  <button class="primary-btn" (click)="navigateToLogin()">Login</button>
+</nav>
+
+<main>
+  <div class="logo-container">
+    <img src="../../assets/logo/logo_8000x8000.png" />
+  </div>
+
+  <div class="main-container">
+    <div class="left">
+      <div class="home-title">
+        <h1>Play It Your Way!</h1>
+        <p>{{ currentSlogan }}</p>
+      </div>
+
+      <app-search searchedText="" (getSearchText)="updateSearchText($event)"></app-search>
+      <button class="home-btn" (click)="searchMetadata()">Explore</button>
+    </div>
+
+    <img src="../../assets/images/HomePage.svg" />
+  </div>
+</main>

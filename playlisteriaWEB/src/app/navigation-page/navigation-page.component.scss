@@ -1,0 +1,33 @@
+:host{
+    display: flex;
+    color: var(--color-white);
+
+    app-vertical-navbar {
+        flex: 1;
+    }
+
+    app-vertical-menu {
+        flex: 1;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        background-color: var(--color-background-dark);
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .music-list {
+                max-height: 490px;
+                overflow-y: auto;
+            }
+        }
+    }
+}

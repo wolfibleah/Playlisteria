@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    color: var(--color-white);
+
+    app-vertical-navbar {
+        flex: 1;
+    }
+
+    app-vertical-menu {
+        flex: 1;
+    }
+
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        padding: 50px;
+        flex-grow: 1;
+        background-color: var(--color-background-dark);
+    }
+
+    .container {
+        max-height: 490px;
+        overflow-y: auto;
+    }
+
+    .convert-btn {
+        background-color: var(--color-cyan-accent);
+        color: black;
+        padding: 10px 16px;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

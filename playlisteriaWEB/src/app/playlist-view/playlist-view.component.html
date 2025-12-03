@@ -1,0 +1,23 @@
+<app-vertical-navbar></app-vertical-navbar>
+
+<main class="main-container">
+    <h2>{{  playlistName }}</h2>
+
+    <div class="convert-btn-container" *ngIf="platform === 'youtube'">
+        <button class="convert-btn" (click)="convert('spotify')">Convert To Spotify</button>
+    </div>
+
+    <div class="convert-btn-container" *ngIf="platform === 'spotify'">
+        <button class="convert-btn" (click)="convert('youtube')">Convert To Youtube</button>
+    </div>
+
+    <div class="container" *ngIf="platform === 'youtube'">
+        <app-music-toast *ngFor="let song of youtubePlaylist" [youtubeMetaData]="song" platform="youtube"></app-music-toast>
+    </div>
+
+    <div class="container" *ngIf="platform === 'spotify'">
+        <app-music-toast *ngFor="let song of spotifyPlaylist" [spotifyMetaData]="song" platform="spotify"></app-music-toast>
+    </div>
+</main>
+
+<app-vertical-menu></app-vertical-menu>

@@ -1,0 +1,39 @@
+<app-vertical-navbar></app-vertical-navbar>
+
+<main>
+  <div class="songinfo-container" *ngIf="platform ==='youtube'">
+    <div id="youtube-video-container" class="video-container">
+      <iframe
+        class="yt-video-container"
+        [src]="url"
+        [title]="youtubeMetadata.title"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="song-container">
+      <app-music-toast [youtubeMetaData]="youtubeMetadata" platform="youtube"></app-music-toast>
+      <pre class="song-description">
+        {{ youtubeMetadata.description }}
+      </pre>
+    </div>
+  </div>
+
+  <div class="songinfo-container" *ngIf="platform ==='spotify'">
+    <div id="spotify-container" class="video-container">
+      <iframe style="border-radius:12px" 
+      class="yt-video-container"
+      [src]="url"
+      width="100%" hiehgt="" 
+      frameBorder="0" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      ></iframe>
+    </div>
+    <div class="song-container">
+      <app-music-toast [spotifyMetaData]="spotifyMetadata" platform="spotify"></app-music-toast>
+    </div>
+  </div>
+</main>
+
+<app-vertical-menu></app-vertical-menu>

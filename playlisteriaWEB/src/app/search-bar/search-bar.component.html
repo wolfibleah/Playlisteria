@@ -1,0 +1,7 @@
+<main class="container">
+    <form class="search-bar-form">
+        <input type="radio" name="group" value="youtube" id="youtube" (click)="updateSearchBy('youtube')" [checked]="searchBy === 'youtube'"><label for="youtube" (click)="updateSearchBy('youtube')">Youtube</label>
+        <input type="radio" name="group" value="spotify" id="spotify" (click)="updateSearchBy('spotify')" [checked]="searchBy === 'spotify'"><label for="spotify" (click)="updateSearchBy('spotify')">Spotify</label>
+        <input class="search-bar-input" type="text" id="searchInput" placeholder="Search by url or name of song" (keyup)="sendUrl()" [(ngModel)]="searchBarText" [ngModelOptions]="{standalone: true}">
+    </form>
+</main>

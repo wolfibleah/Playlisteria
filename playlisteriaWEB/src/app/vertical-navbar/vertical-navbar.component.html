@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="content">
+    <div class="logo-container">
+      <a href="/">
+        <img
+          class="logo"
+          src="../../assets/logo/logo_8000x8000.png"
+          alt="Logo"
+        />
+      </a>
+    </div>
+
+    <nav class="horizontal-navbar">
+      <div class="nav-link-group">
+        <i class="fa-solid fa-house"></i>
+        <a href="/" class="nav-link">Home</a>
+      </div>
+      <div class="nav-link-group">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <a href="/navigate" class="nav-link">Search</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="playlist-container" *ngIf="isConnectedToYoutubeAccount">
+    <h3>Youtube Playlists</h3>
+    <div class="youtube-playlist-container">
+      <div class="playlist" *ngFor="let playlist of youtubePlaylists" (click)="goToPlaylistPage(playlist.id, playlist.name, 'youtube')">
+        {{ playlist.name }}
+      </div>
+    </div>
+  </div>
+
+  <div class="playlist-container" *ngIf="isConnectedToSpotifyAccount">
+    <h3>Spotify Playlists</h3>
+    <div class="spotify-playlist-container">
+      <div class="playlist" *ngFor="let playlist of spotifyPlaylists" (click)="goToPlaylistPage( playlist.id, playlist.name, 'spotify')">
+        {{ playlist.name }}
+      </div>
+    </div>
+  </div>
+
+  <div class="container-footer">Version: 1.0.0</div>
+</div>
